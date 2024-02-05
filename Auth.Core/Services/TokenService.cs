@@ -49,7 +49,7 @@ public class TokenService(IConfiguration configuration, UserManager<AppUser> use
         }
 
 
-        var signatureKey = configuration.GetSection("TokenOptions")["Key"]!;
+        var signatureKey = configuration.GetSection("TokenOptions")["SignatureKey"]!;
         var tokenExpireAsHour = configuration.GetSection("TokenOptions")["TokenExpire"]!;
 
         var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(signatureKey));
